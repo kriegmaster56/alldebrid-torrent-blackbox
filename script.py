@@ -39,10 +39,7 @@ def getConfig():
     config = configparser.ConfigParser()
     config.read(args.config)
     
-    if args.download != None:
-        download_path = args.download
-    else: 
-        download_path = "/etc/download/"
+    download_path = "/etc/download/"
     # TODO cleanup this part 
     if args.api != None:
         api = args.api
@@ -51,17 +48,9 @@ def getConfig():
     else: 
         raise AttributeError("No API key.")
 
-    if args.monitor != None:
-        monitor_path = args.monitor
-    else: 
-        # Default monitoring path
-        monitor_path = "/etc/monit/"
+    monitor_path = "/etc/monit/"
 
-    if args.crawl != None:
-        crawl_path = args.crawl
-    else: 
-        # Default crawling path
-        crawl_path = "./crawl/"
+    crawl_path = "./crawl/"
 
     logger.info("Monitoring torrents under: %s ; Output crawljob directory: %s " % ( monitor_path, crawl_path ) )
 
@@ -237,11 +226,7 @@ def setupArgs():
     global parser, args
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--config", help="Path of the config.ini file", default="config.ini")
-    parser.add_argument("-m", "--monitor", help="Path of the directory the script should monitor")
-    parser.add_argument("-d", "--download", help="Path of the download directory the file should point to" )
-    parser.add_argument("-C", "--crawl", help="Path of the directory the crawljobs will be written into")
     parser.add_argument("--api", help="API Token for alldebrid")
-    parser.add_argument("-p", "--path-download", help="Path of the download directory the crawljobs should point to" )
     args = parser.parse_args()
 
     start()
