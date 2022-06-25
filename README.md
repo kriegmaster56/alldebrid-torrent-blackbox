@@ -15,6 +15,6 @@ the goal of this project is to be fed .torrent file, upload it to alldebrid, let
 
 ```docker run -v <directory on host to store .torrent file>:/etc/monit/ -v <directory on host to get downloaded files>:/etc/download/ -d alldebrid-torrent-blackbox:latest ```
 
-alternatively you can build the image without the config.ini by commenting the line in the Dockerfile and pass your alldebrid API key in the docker run command
+alternatively you can build the image without the config.ini by deleting it and pass your alldebrid API key in the docker run command
 
 ```docker run -v <directory on host to store .torrent file>:/etc/monit/ -v <directory on host to get downloaded files>:/etc/download/ -d alldebrid-torrent-blackbox:latest --api "XXXXXX" ```
