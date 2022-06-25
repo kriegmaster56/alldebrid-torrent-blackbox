@@ -41,10 +41,8 @@ def getConfig():
     
     if args.download != None:
         download_path = args.download
-    elif 'download'in config['Config'].keys() : 
-        download_path = config['Config']['download']
     else: 
-        download_path = "./downloads/"
+        download_path = "/etc/download/"
     # TODO cleanup this part 
     if args.api != None:
         api = args.api
@@ -55,11 +53,9 @@ def getConfig():
 
     if args.monitor != None:
         monitor_path = args.monitor
-    elif 'path'in config['Config'].keys() : 
-        monitor_path = config['Config']['path']
     else: 
         # Default monitoring path
-        monitor_path = "./torrents/"
+        monitor_path = "/etc/monit/"
 
     if args.crawl != None:
         crawl_path = args.crawl
