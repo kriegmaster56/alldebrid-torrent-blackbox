@@ -59,8 +59,6 @@ def getConfig():
 
     if args.crawl != None:
         crawl_path = args.crawl
-    elif "crawl_path" in config['Config'].keys() : 
-        crawl_path = config['Config']['crawl_path']
     else: 
         # Default crawling path
         crawl_path = "./crawl/"
