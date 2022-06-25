@@ -3,7 +3,6 @@ RUN mkdir /etc/script
 RUN mkdir /etc/monit
 RUN mkdir /etc/download
 RUN pip3 install configparser argparse requests
-COPY script.py /etc/script/script.py
-COPY config.ini /etc/script/config.ini
+COPY script.py config.ini /etc/script/
 WORKDIR /etc/script
 ENTRYPOINT ["python3", "script.py"]
