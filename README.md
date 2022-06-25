@@ -1,4 +1,9 @@
 # alldebrid-torrent-blackbox
+## Goal
+
+the goal of this project is to be fed .torrent file, upload it to alldebrid, let alldebrid download it and upload to a direct download service and then use the debrided link to download the file.
+
+## How to use this project
 
 1- complete config.ini file with api key 
 
